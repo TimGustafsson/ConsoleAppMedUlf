@@ -59,8 +59,8 @@ namespace ConsoleAppMedUlf
         //Menu
         private static void PrintMenu()
         {
-            Console.WriteLine("-----Menu-----");
-            Console.WriteLine("Result order:");
+            Console.WriteLine("-----Calculator menu-----");
+            Console.WriteLine("Choose one of the options below:");
             Console.WriteLine("1. Addition");
             Console.WriteLine("2. Subtraction");
             Console.WriteLine("3. Divison");
