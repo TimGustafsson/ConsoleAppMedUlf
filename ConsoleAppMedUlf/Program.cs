@@ -7,10 +7,13 @@ namespace ConsoleAppMedUlf
         static void Main(string[] args)
         {//Code block of main method
 
-            while (true)
+            bool keepLooping = true;
+            while (keepLooping)
             {
-
+                Console.Clear();
                 PrintMenu();
+
+                ConsoleKey selection = Console.ReadKey(true).Key;
 
                 Console.WriteLine("Enter a number here");
                 double num1 = Convert.ToDouble(Console.ReadLine());
@@ -18,13 +21,36 @@ namespace ConsoleAppMedUlf
                 Console.WriteLine("Enter a second number here");
                 double num2 = Convert.ToDouble(Console.ReadLine());
 
-                Addition(num1, num2);
+                switch (selection)
+                {
+                    case ConsoleKey.D1:
+                    case ConsoleKey.NumPad1:
+                        Addition(num1, num2);
+                        break;
 
-                Subtraction(num1, num2);
+                    case ConsoleKey.D2:
+                    case ConsoleKey.NumPad2:
+                        Subtraction(num1, num2);
+                        break;
 
-                Division(num1, num2);
+                    case ConsoleKey.D3:
+                    case ConsoleKey.NumPad3:
+                        Division(num1, num2);
+                        break;
 
-                Multiplication(num1, num2);
+                    case ConsoleKey.D4:
+                    case ConsoleKey.NumPad4:
+                        Multiplication(num1, num2);
+                        break;
+
+                }
+
+                Console.WriteLine("Press Q to quit or press other key to continue: ");
+                if (Console.ReadKey().Key == ConsoleKey.Q)
+                {
+                    keepLooping = false;
+                }
+
 
             }
 
@@ -71,7 +97,7 @@ namespace ConsoleAppMedUlf
             {
                 Console.WriteLine($"{num1} / {num2} = {num1 / num2}");
             }
-                    
+
         }
 
     }//End of class
